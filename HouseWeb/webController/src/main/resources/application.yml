@@ -1,0 +1,26 @@
+server:
+  port: 9090
+  jsp-servlet:
+      init-parameters:
+        development:  true
+spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
+  datasource:
+      driver-class-name: com.mysql.jdbc.Driver
+      username: root
+      password: root
+      url: jdbc:mysql:///house?useUnicode=true&characterEncoding=utf8
+redis:
+  host: 120.79.167.249
+  port: 6666
+  password: 914449389
+  timeout: 6000
+  minidle: 10
+  maxidle: 200
+  maxtotal: 1024
+  maxwait: 6000
+
+

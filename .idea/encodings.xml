@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/HouseWeb" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/HouseWeb/webController" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/HouseWeb/webmapper" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/HouseWeb/webpojo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/HouseWeb/webservice" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/HouseWeb/webserviceImpl" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/HousedCommons" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/HousedCommons/commonsStringUtils" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/HousedCommons/commonscode" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/HousedCommons/commonsredis" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/HousedManager" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>
