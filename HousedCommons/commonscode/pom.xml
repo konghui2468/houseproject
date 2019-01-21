@@ -34,6 +34,12 @@
             <artifactId>junit</artifactId>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>com.qianfeng</groupId>
+            <artifactId>commonsStringUtils</artifactId>
+            <version>1.0</version>
+        </dependency>
     </dependencies>
 
 

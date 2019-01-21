@@ -108,8 +108,47 @@ public class HouseController {
        else {
            return "false";
        }
+   }
 
+   @RequestMapping("/login")
+    public String Houselogin(String phonecode){
+        return "index";
+    }
 
+   @RequestMapping("/checkLogincode")
+   @ResponseBody
+    public String CheckLogin(HttpServletRequest request,String phonevalue,String phonecodevalue){
+       Jedis jedis = redisClientInterface.getJedis();
+       //取出存放在Redis的值
+       String redisValue="";
+       Cookie[] cookies = request.getCookies();
+       if(cookies!=null){
+           for (Cookie cookie : cookies) {
+               String name = cookie.getName();
+               if(name.equals("phonecode")){
+                   String value = cookie.getValue();
+                   redisValue = redisClientInterface.get(value, jedis);//该值就是验证码
+               }
+           }
+       }
+       else if(cookies==null) {
+            return "4";
+       }
+       /*System.out.println(phonecodevalue);
+       System.out.println(phonevalue);*/
+       if(phonevalue.equals("")){
+           return "1";
+       }
+       else if(phonecodevalue.equals("")){
+           return "2";
+       }
+       else if(!redisValue.equalsIgnoreCase(phonecodevalue)){
+           return "3";
+       }
+       else if(redisValue.equalsIgnoreCase(phonecodevalue)){
+           return "200";
+       }
+       return null;
 
 
    }

@@ -33,9 +33,11 @@ package com.qianfeng.common.codeUtils;
 
 import cn.dsna.util.images.ValidateCode;
 import com.qianfeng.common.redisUtil.RedisClientInterface;
+import com.qianfeng.common.utils.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import redis.clients.jedis.Jedis;
 
 import javax.imageio.ImageIO;
@@ -44,6 +46,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.UUID;
 
 /**
@@ -108,5 +112,55 @@ public class CodeController {
         ImageIO.write(buffImg,"jpg",response.getOutputStream());
 
     }
+
+    @RequestMapping("/utils/phonecode")
+    @ResponseBody
+    public Map<String,Object> PhoneCode(HttpServletRequest request, HttpServletResponse response){
+        StringUtils utils=new StringUtils();
+        String phonecode = utils.StringUtils1();//生成随机数的四位验证码
+        //并将其存放到Redis中
+        Jedis jedis = redisClientInterface.getJedis();
+        //将Cookies当Redis的Key值
+        Cookie[] cookies = request.getCookies();//获取Cookies对象
+        //遍历cookies值,但第一次访问时没有Cookie的
+        boolean flag=false;
+        Map<String,Object> map=new HashMap<>();
+        String value="";
+        if(cookies!=null){
+            for (Cookie cookie : cookies) {
+                String cookieName = cookie.getName();
+                //我们设定ccokie的Key值为phonecode
+                flag=cookieName.equals("phonecode");
+                if(flag){
+                    //存在则获取Cookie的Value值，该Value值是Redis的Key
+                     value = cookie.getValue();
+                     redisClientInterface.setex(value,phonecode,60,jedis);
+                     break;
+                }
+
+            }
+            if(flag){
+                //将刚刚的RedisKey作为Key,value为新的Code
+                redisClientInterface.setex(value,phonecode,60,jedis);
+            }
+
+
+        }
+        if(!flag){
+            //给RedisKey手动赋予一个UUID值
+            value=UUID.randomUUID().toString().replaceAll("-","");
+            //存放到Redis中
+            redisClientInterface.setex(value,phonecode,60,jedis);
+            //给Cookie手动设置
+            Cookie cookie=new Cookie("phonecode",value);
+            cookie.setPath("/");
+            response.addCookie(cookie);
+        }
+        map.put("code",phonecode);
+        return map;
+
+
+    }
+
 
 }

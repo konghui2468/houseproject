@@ -10,12 +10,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <!-- 5i5jcss和js -->
-    <link href="css/common.css" rel="stylesheet" type="text/css">
-    <link href="css/tdzsty.css" rel="stylesheet" type="text/css">
+    <link href="/static/css/common.css" rel="stylesheet" type="text/css">
+    <link href="/static/css/tdzsty.css" rel="stylesheet" type="text/css">
     <link rel="icon" href="/passport/images/5i5j.ico" mce_href="/passport/images/5i5j.ico" type="image/x-icon" />
-    <script src="js/jquery-1.10.2.min.js"></script>
-    <script type="text/javascript" src="js/common.js"></script>
-    <script src="js/tdz.js"></script>
+    <script src="/static/js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="/static/js/common.js"></script>
+    <script src="/static/js/tdz.js"></script>
     <script language="JavaScript">var _trackDataType = 'web';var _trackData = _trackData || [];</script>
 
 
@@ -194,11 +194,11 @@
                 var rs=false;
                 $.ajax({
                     type: "POST",
-                    url:'/passport/v1/checkLoginIdentifyCode',
+                    url:'/user/checkLogincode',
                     async:false,
                     dataType:"text",//json
                     scriptCharset: "utf-8",
-                    data:"aim=pc&phone="+usernamevalue+"&phonecode="+passwordvalue+"&r="+new Date().getTime(),
+                    data:{"phonevalue":usernamevalue,"phonecodevalue":passwordvalue},
                     success:function (data){
                         console.log(data);
                         //var resultDto=eval("("+data+")");
@@ -257,24 +257,29 @@
 
             var code=document.getElementById("code").value;
             //alert(code);
+            alert('123')
 
             /*$.ajax({
                 url:'/user/code',
                 data:{"code":code},
                 dataType:"json",
-                type:"get",
+                type:"post",
                 success:function (data) {
-                    if(data=='ok'){
+                    if(data.code=='1'){
                         alert('验证成功');
                     }
                     else {
                         alert('验证失败');
                     }
+                },
+                error:function () {
+                    alert('错误代码');
                 }
 
             })*/
 
             document.forms[2].submit();
+
 
         }
 
@@ -299,11 +304,26 @@
                 $('#err').hide();
                 return false;
             }else{
-                $('#codemessage').hide();
+                /*$('#codemessage').hide();
                 aa();//调取生成验证码
                 $(".tcBox").removeClass("hide");
                 $(".closeBtn").click(function(){
                     $(".tcBox").addClass("hide");
+                })*/
+                $.ajax({
+                    url:'/utils/phonecode',
+                    dataType:"json",
+                    type:"post",
+                    success:function (data) {
+                        console.log(data)
+                        alert("发送的验证码是"+data.code);
+                        $('#code1').show();
+                        $('#code1').html("该验证码是"+data.code);
+                        resetCode();
+                    },
+                    error:function () {
+                        alert('错误代码');
+                    }
                 })
             }
         }
@@ -322,6 +342,7 @@
                     clearInterval(timer);
                     $('#J_getCode').show();
                     $('#J_resetCode').hide();
+                    $('#code1').hide();
                 }
             },1000);
         }
@@ -345,7 +366,7 @@
 
 
 
-            <img src="picture/d-logo.png"></a>
+            <img src="/static/picture/d-logo.png"></a>
 
     </div>
 </div>
@@ -400,7 +421,7 @@
 
                 </div>
                 <div class="log_main hide" id="mobile">
-                    <form  method="post" onsubmit="return phonsubmit();" action=/passport/phon?city=hz>
+                    <form  method="post" onsubmit="return phonsubmit();" action="/user/login">
                         <p class="marTop3 pBgs">
            	  <span class="lf">
 					<input type="text"  autocomplete="off" id="phone"  name="phone" placeholder="请输入手机号" value=""/>
@@ -410,6 +431,7 @@
                             <a class="yzmBtn hide" href="javascript:void(0)" id="J_resetCode" ><span id="J_second">60</span>秒后重发</a>
 
                         </p>
+                        <span id="code1"></span>
 
                         <p class="marTop3 pBgs">
                             <input id="phonecode" name="phonecode" type="text" autocomplete="off"  placeholder="请输入验证码" />
@@ -450,7 +472,7 @@
             <span class="or">or</span>
             <p>使用以下账号直接登录</p>
             <ul class="sf-login"><li><a onmousedown="_trackData.push(['addaction','PC_HZ_登录页','登录按钮']);	ga('send','event','PC_BJ_登录页','登录按钮','PC_HZ_登录页_登录按钮');" class="wx" href=/passport/wxlogin.do?service=https://hz.5i5j.com/reglogin/index?preUrl=https%3A%2F%2Fhz.5i5j.com%2Fershoufang%3Fpmf_group%3Dbaidu%26pmf_medium%3Dcpc%26pmf_plan%3D%25E4%25BA%258C%25E6%2589%258B%25E6%2588%25BF%25E7%25B2%25BE%25E7%25A1%25AE%26pmf_unit%3D%25E4%25BA%258C%25E6%2589%258B%25E6%2588%25BF%26pmf_keyword%3D%25E4%25BA%258C%25E6%2589%258B%25E6%2588%25BF%26pmf_account%3D75%26pmf_id%3D23100403845>微信</a></li><li><a onmousedown="_trackData.push(['addaction','PC_HZ_登录页','登录按钮']);	ga('send','event','PC_BJ_登录页','登录按钮','PC_BJ_登录页_登录按钮');"  class="qq" href=/passport/qqlogin.do?service=https://hz.5i5j.com/reglogin/index?preUrl=https%3A%2F%2Fhz.5i5j.com%2Fershoufang%3Fpmf_group%3Dbaidu%26pmf_medium%3Dcpc%26pmf_plan%3D%25E4%25BA%258C%25E6%2589%258B%25E6%2588%25BF%25E7%25B2%25BE%25E7%25A1%25AE%26pmf_unit%3D%25E4%25BA%258C%25E6%2589%258B%25E6%2588%25BF%26pmf_keyword%3D%25E4%25BA%258C%25E6%2589%258B%25E6%2588%25BF%26pmf_account%3D75%26pmf_id%3D23100403845>QQ</a></li><li><a  onmousedown="_trackData.push(['addaction','PC_HZ_登录页','登录按钮']);	ga('send','event','PC_BJ_登录页','登录按钮','PC_BJ_登录页_登录按钮');" class="xl" href=/passport/wblogin.do?service=https://hz.5i5j.com/reglogin/index?preUrl=https%3A%2F%2Fhz.5i5j.com%2Fershoufang%3Fpmf_group%3Dbaidu%26pmf_medium%3Dcpc%26pmf_plan%3D%25E4%25BA%258C%25E6%2589%258B%25E6%2588%25BF%25E7%25B2%25BE%25E7%25A1%25AE%26pmf_unit%3D%25E4%25BA%258C%25E6%2589%258B%25E6%2588%25BF%26pmf_keyword%3D%25E4%25BA%258C%25E6%2589%258B%25E6%2588%25BF%26pmf_account%3D75%26pmf_id%3D23100403845>新浪</a></li></ul>
-            <div class="ewmBox"><img src="picture/ewm.png"><p>[扫描下载我爱我家APP]</p></div>
+            <div class="ewmBox"><img src="/static/picture/ewm.png"><p>[扫描下载我爱我家APP]</p></div>
         </div>
     </div>
 
@@ -461,7 +483,7 @@
 
 <!-- 验证码弹层 -->
 <div class="tcBox hide" >
-    <form  method="post" onsubmit="return clicksubmitcode();" action="/user/code">
+    <form method="post"  onsubmit="return clicksubmitcode()" action="/user/code?city=hz">
         <div class="yz-tan ">
             <p class="pTit">请先输入以下图形验证码</p>
             <div class="pSty">
@@ -481,7 +503,7 @@
             </div>
             <!-- <p class="err">错误提示</p> -->
 
-            <a href="javascript:void(0)" onclick ="clicksubmitcode();return false;" name="logincode" id="logincode"  class="qBtn">
+            <a href="javascript:void(0)" onclick ="clicksubmitcode();return false" name="logincode" id="logincode"  class="qBtn">
                 <span>确定</span></a>
             <!-- 	<a class="qBtn">确定</a> -->
             <a class="closeBtn">关闭</a>
@@ -574,7 +596,7 @@
 
 
 
-<script id="phpstat_js_id_10000001" src="js/10000002.js"></script>
+<script id="phpstat_js_id_10000001" src="/static/js/10000002.js"></script>
 
 
 

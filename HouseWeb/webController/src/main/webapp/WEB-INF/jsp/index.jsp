@@ -33,10 +33,10 @@
         ga('send', 'pageview');
         var baseUrl = 'https://res.5i5j.com';
     </script>
-    <link href="css/basic.css" rel="stylesheet">
-    <link href="css/sale.css" rel="stylesheet">
-    <link href="css/xxsty.css" rel="stylesheet">
-    <script src="js/image-error.js"></script>    </head>
+    <link href="/static/css/basic.css" rel="stylesheet">
+    <link href="/static/css/sale.css" rel="stylesheet">
+    <link href="/static/css/xxsty.css" rel="stylesheet">
+    <script src="/static/js/image-error.js"></script>    </head>
 <body>
 <!-- 导航 start -->
 <div class="top-bar-box">
@@ -919,7 +919,7 @@
 <script type="text/javascript">
     var phpstaturl = 'https://stat.bacic5i5j.com';
 </script>
-<script id="phpstat_js_id_10000001" src="js/10000001.js"></script>
+<script id="phpstat_js_id_10000001" src="/static/js/10000001.js"></script>
 <!--图片默认资源-->
 <!--script  src="https://res.5i5j.com/pc/common/image-error.js?20190115"></script-->
 <!-- 底部 end -->
@@ -936,17 +936,17 @@
     var companysid = "2";
     var preUrl = "https%3A%2F%2Fhz.5i5j.com%2Fershoufang%3Fpmf_group%3Dbaidu%26login%3D1";
 </script>
-<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-<script type="text/javascript" src="js/basic.js"></script>
-<script type="text/javascript" src="js/online.service.js"></script>
-<script type="text/javascript" src="js/image-error.js"></script>
+<script type="text/javascript" src="/static/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="/static/js/basic.js"></script>
+<script type="text/javascript" src="/static/js/online.service.js"></script>
+<script type="text/javascript" src="/static/js/image-error.js"></script>
 <!-- <script type="text/javascript" src="js/sale.js"></script> -->
-<script type="text/javascript" src="js/sale.js"></script>
+<script type="text/javascript" src="/static/js/sale.js"></script>
 
-<script type="text/javascript" src="js/superslide.js"></script>
-<script type="text/javascript" src="js/znxf.js"></script>
-<script type="text/javascript" src="js/jquery-ui.min.js"></script>
-<script type="text/javascript" src="js/range.min.js"></script>
+<script type="text/javascript" src="/static/js/superslide.js"></script>
+<script type="text/javascript" src="/static/js/znxf.js"></script>
+<script type="text/javascript" src="/static/js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/static/js/range.min.js"></script>
 <style>
     .webim-msg-img {
         max-width: 100%;
@@ -1044,17 +1044,17 @@
 
     var timestamp = new Date().getTime();
 </script>
-<script src="js/xxjs.js"></script>
-<script src="js/webim.config.js"></script>
-<script src="js/jquery.cookie.js"></script>
-<script src="js/socket.js"></script>
-<script src="js/strophe-1.2.8.min.js"></script>
-<script src="js/websdk-1.4.13.js"></script>
+<script src="/static/js/xxjs.js"></script>
+<script src="/static/js/webim.config.js"></script>
+<script src="/static/js/jquery.cookie.js"></script>
+<script src="/static/js/socket.js"></script>
+<script src="/static/js/strophe-1.2.8.min.js"></script>
+<script src="/static/js/websdk-1.4.13.js"></script>
 <!--script src="https://res.5i5j.com/pc/im/js/swfobject.js"></script-->
-<script src="js/web_socket.js"></script>
-<script src="js/im.init.js"></script>
-<script src="js/jquery.browser.js"></script>
-<script src="js/jquery.qqface.js"></script>
+<script src="/static/js/web_socket.js"></script>
+<script src="/static/js/im.init.js"></script>
+<script src="/static/js/jquery.browser.js"></script>
+<script src="/static/js/jquery.qqface.js"></script>
 
 <!-- 提示弹层 -->
 <style>

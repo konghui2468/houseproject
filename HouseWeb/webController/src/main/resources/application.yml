@@ -8,6 +8,7 @@ spring:
     view:
       prefix: /WEB-INF/jsp/
       suffix: .jsp
+    static-path-pattern: /static/**
   datasource:
       driver-class-name: com.mysql.jdbc.Driver
       username: root
