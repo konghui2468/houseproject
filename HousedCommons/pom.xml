@@ -15,7 +15,6 @@
         <module>commonsredis</module>
         <module>commonsStringUtils</module>
         <module>commonscode</module>
-        <module>commonssolr</module>
     </modules>
 
 

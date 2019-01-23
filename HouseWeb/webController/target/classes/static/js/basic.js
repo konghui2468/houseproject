@@ -67,13 +67,18 @@ $(function(){
             data: {status:type,keywords:keywords},
             dataType: "JSON",
             async:false,
-            success: function(result){
-                if(typeof(result)!='object'){
-                    jumpurl="/"+result;
-                    var datas=setHistoryData(jumpurl,'0','0',keywords,'0');
-                    setCookie(searchType+'_cookiekey', datas);
-                    toJumpUrl(type, jumpurl);
-                }
+            success: function(data){
+
+                 if(typeof(data.result)!='object'){
+                        jumpurl="/"+data.result;
+                        var datas=setHistoryData(jumpurl,'0','0',keywords,'0');
+                        setCookie(searchType+'_cookiekey', datas);
+                        toJumpUrl(type, jumpurl);
+                    }
+            },
+            error: function (re,text) {
+                alert(12645);
+                
             }
         });
     }

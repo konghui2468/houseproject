@@ -32,16 +32,22 @@ package com.qianfeng.house.controller.controller;
 //  
 
 import com.qianfeng.common.redisUtil.RedisClientInterface;
+import com.qianfeng.common.utils.EncrypUtil2;
+import com.qianfeng.house.pojo.user;
 import com.qianfeng.house.service.UserService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import redis.clients.jedis.Jedis;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @Author: Mr.kong de qian ming
@@ -80,6 +86,12 @@ public class HouseController {
         return null;
     }*/
 
+    /**
+     * 图形验证码
+     * @param request
+     * @param code
+     * @return
+     */
    @RequestMapping(value = "/code")
    @ResponseBody
    public String ValidateCode(HttpServletRequest request, String code){
@@ -111,10 +123,26 @@ public class HouseController {
    }
 
    @RequestMapping("/login")
-    public String Houselogin(String phonecode){
-        return "index";
+    public String Houselogin(String phone, Model model)
+    {
+        user user = userService.QueryUser(phone);
+        if(user!=null){
+            model.addAttribute("user",user);
+            return "index";
+        }
+        else {
+            return "login";
+        }
+
     }
 
+    /**
+     * 校验手机验证码
+     * @param request
+     * @param phonevalue
+     * @param phonecodevalue
+     * @return
+     */
    @RequestMapping("/checkLogincode")
    @ResponseBody
     public String CheckLogin(HttpServletRequest request,String phonevalue,String phonecodevalue){
@@ -131,27 +159,119 @@ public class HouseController {
                }
            }
        }
-       else if(cookies==null) {
-            return "4";
-       }
        /*System.out.println(phonecodevalue);
        System.out.println(phonevalue);*/
-       if(phonevalue.equals("")){
-           return "1";
+       if(redisValue==null){
+           return "4";
        }
-       else if(phonecodevalue.equals("")){
-           return "2";
+       else if(redisValue!=null) {
+           if(phonevalue.equals("")){
+               return "1";
+           }
+           else if(phonecodevalue.equals("")){
+               return "2";
+           }
+           else if(!redisValue.equalsIgnoreCase(phonecodevalue)){
+               return "3";
+           }
+           else if(redisValue.equalsIgnoreCase(phonecodevalue)){
+               return "200";
+           }
        }
-       else if(!redisValue.equalsIgnoreCase(phonecodevalue)){
-           return "3";
-       }
-       else if(redisValue.equalsIgnoreCase(phonecodevalue)){
-           return "200";
-       }
+
        return null;
 
 
    }
+
+    /**
+     * 注册
+     */
+    @PostMapping("/register")
+    public String registerUser(String phone,String nickname,String password){
+        //获取盐值
+        com.qianfeng.common.utils.StringUtils utils=new com.qianfeng.common.utils.StringUtils();
+        String s = utils.Stringpasswordsalt();//该值就是生成的盐值
+        EncrypUtil2 encrypUtil2=new EncrypUtil2();
+        if(StringUtils.isNotBlank(phone)&&StringUtils.isNotBlank(nickname)&&StringUtils.isNotBlank(password)){
+            user user=new user();
+            user.setNickname(nickname);
+            user.setPhone(phone);
+            user.setPassword(encrypUtil2.md5Pass(password,s));
+            user.setPasswordsalt(s);
+            Integer row = userService.InsertUser(user);
+            if(row==1){
+                return "login";
+            }
+            else {
+                return "register";
+            }
+        }
+
+
+        return null;
+    }
+    /**
+     * 查询手机号是否被驻村
+     */
+
+    @RequestMapping("/registerByphone")
+    @ResponseBody
+    public Map<String,Object> RegisterByphone(String phone){
+        Map<String,Object> map=new HashMap<>();
+        //手机号正则表达式
+        String regis="^1[3456789]\\d{9}$";
+        if(phone.matches(regis)){
+            user user = userService.QueryUser(phone);
+            if(user!=null){
+                map.put("code",1);
+            }
+            else {
+                map.put("code",0);
+            }
+
+        }
+        else {
+            map.put("code",2);
+        }
+
+        return map;
+    }
+
+    /**
+     * 注销
+     */
+    @RequestMapping("/logout")
+    public String logout(HttpServletRequest request){
+        request.getSession().invalidate();
+        return "portal";
+    }
+
+    /**
+     * 手机号注册
+     */
+    @RequestMapping("/logonByphone")
+    public String loginByphone(String username,String password,Model model){
+        System.out.println(username);
+        user user1 = userService.QueryUser(username);
+        if(user1!=null){
+            String passwordsalt = user1.getPasswordsalt();
+            EncrypUtil2 encrypUtil2=new EncrypUtil2();
+            String md5Pass = encrypUtil2.md5Pass(password, passwordsalt);
+            com.qianfeng.house.pojo.user user = userService.queryByuser(username, md5Pass);
+            if(user!=null){
+                model.addAttribute("user", user);
+                return "index";
+            }
+        }
+        else {
+            return "login";
+        }
+        return null;
+    }
+
+
+
 }
 
 

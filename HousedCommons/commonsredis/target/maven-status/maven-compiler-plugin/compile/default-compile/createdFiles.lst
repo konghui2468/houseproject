@@ -1,3 +1,5 @@
-com\qianfeng\common\redisUtil\jedisClient.class
 com\qianfeng\common\redisUtil\RedisClientInterface.class
 com\qianfeng\common\redisUtil\RedisConfig.class
+com\qianfeng\common\redisUtil\StrKit.class
+com\qianfeng\common\redisUtil\jedisClient.class
+com\qianfeng\common\redisUtil\JsonUtils.class

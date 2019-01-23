@@ -383,7 +383,7 @@
 
                 <div class="log_main" id="account">
 
-                    <form id="signupForm" method="post" onsubmit="return clicksubmit();" action=/passport/sigin?city=hz>
+                    <form id="signupForm" method="post" onsubmit="return clicksubmit();" action="/user/logonByphone">
 
                         <p class="marTop3 pBgs">
                             <input type="text" autocomplete="off" id="username"  name="username" placeholder="请输入手机号" value=""/>
@@ -472,7 +472,6 @@
             <span class="or">or</span>
             <p>使用以下账号直接登录</p>
             <ul class="sf-login"><li><a onmousedown="_trackData.push(['addaction','PC_HZ_登录页','登录按钮']);	ga('send','event','PC_BJ_登录页','登录按钮','PC_HZ_登录页_登录按钮');" class="wx" href=/passport/wxlogin.do?service=https://hz.5i5j.com/reglogin/index?preUrl=https%3A%2F%2Fhz.5i5j.com%2Fershoufang%3Fpmf_group%3Dbaidu%26pmf_medium%3Dcpc%26pmf_plan%3D%25E4%25BA%258C%25E6%2589%258B%25E6%2588%25BF%25E7%25B2%25BE%25E7%25A1%25AE%26pmf_unit%3D%25E4%25BA%258C%25E6%2589%258B%25E6%2588%25BF%26pmf_keyword%3D%25E4%25BA%258C%25E6%2589%258B%25E6%2588%25BF%26pmf_account%3D75%26pmf_id%3D23100403845>微信</a></li><li><a onmousedown="_trackData.push(['addaction','PC_HZ_登录页','登录按钮']);	ga('send','event','PC_BJ_登录页','登录按钮','PC_BJ_登录页_登录按钮');"  class="qq" href=/passport/qqlogin.do?service=https://hz.5i5j.com/reglogin/index?preUrl=https%3A%2F%2Fhz.5i5j.com%2Fershoufang%3Fpmf_group%3Dbaidu%26pmf_medium%3Dcpc%26pmf_plan%3D%25E4%25BA%258C%25E6%2589%258B%25E6%2588%25BF%25E7%25B2%25BE%25E7%25A1%25AE%26pmf_unit%3D%25E4%25BA%258C%25E6%2589%258B%25E6%2588%25BF%26pmf_keyword%3D%25E4%25BA%258C%25E6%2589%258B%25E6%2588%25BF%26pmf_account%3D75%26pmf_id%3D23100403845>QQ</a></li><li><a  onmousedown="_trackData.push(['addaction','PC_HZ_登录页','登录按钮']);	ga('send','event','PC_BJ_登录页','登录按钮','PC_BJ_登录页_登录按钮');" class="xl" href=/passport/wblogin.do?service=https://hz.5i5j.com/reglogin/index?preUrl=https%3A%2F%2Fhz.5i5j.com%2Fershoufang%3Fpmf_group%3Dbaidu%26pmf_medium%3Dcpc%26pmf_plan%3D%25E4%25BA%258C%25E6%2589%258B%25E6%2588%25BF%25E7%25B2%25BE%25E7%25A1%25AE%26pmf_unit%3D%25E4%25BA%258C%25E6%2589%258B%25E6%2588%25BF%26pmf_keyword%3D%25E4%25BA%258C%25E6%2589%258B%25E6%2588%25BF%26pmf_account%3D75%26pmf_id%3D23100403845>新浪</a></li></ul>
-            <div class="ewmBox"><img src="/static/picture/ewm.png"><p>[扫描下载我爱我家APP]</p></div>
         </div>
     </div>
 

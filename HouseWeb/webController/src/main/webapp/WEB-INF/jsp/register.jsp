@@ -55,12 +55,27 @@
                 $("#cc").hide();
                 $("#dd").hide();
                 $('#err').hide();
-                $('#codemessage').hide();
+                /*$('#codemessage').hide();
                 $(".tcBox").removeClass("hide");
                 $(".closeBtn").click(function(){
                     $(".tcBox").addClass("hide");
                 })
-                aa();
+                aa();*/
+                $.ajax({
+                    url:'/utils/phonecode',
+                    dataType:"json",
+                    type:"post",
+                    success:function (data) {
+                        console.log(data)
+                        alert("发送的验证码是"+data.code);
+                        $('#code2').show();
+                        $('#code2').html("该验证码是"+data.code);
+                        resetCode();
+                    },
+                    error:function () {
+                        alert('错误代码');
+                    }
+                })
             }
         }
 
@@ -92,6 +107,7 @@
                     clearInterval(timer);
                     $('#J_getCode').show();
                     $('#J_resetCode').hide();
+                    $('#code2').hide();
                 }
             },1000);
         }
@@ -303,10 +319,10 @@
     <meta name="Author" content="">
     <meta name="Keywords" content="">
     <meta name="Description" content="">
-    <link href="css/common.css" rel="stylesheet" type="text/css">
-    <link href="css/tdzsty.css" rel="stylesheet" type="text/css">
+    <link href="/static/css/common.css" rel="stylesheet" type="text/css">
+    <link href="/static/css/tdzsty.css" rel="stylesheet" type="text/css">
 
-    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="/static/js/jquery-1.10.2.min.js"></script>
 
 </head>
 
@@ -315,31 +331,34 @@
 <div class="head-logo"><div class="head-main mar">
 
 
-    <a href=https://hz.5i5j.com>
+    <%--<a href=https://hz.5i5j.com>
 
 
 
 
-        <img src="picture/d-logo.png"></a>
+        <img src="/static/picture/d-logo.png"></a>--%>
 </div></div>
 
 
 <!-- 注册  -->
 <div class="zcBox mar">
-    <form  method="post" action=/passport/register?city=hz>
+    <form  method="post" action="/user/register">
         <h4 class="tIt"><i></i>创建账户</h4>
         <div class="login-main clear">
             <div class="login-left lf">
                 <div class="login-con">
                     <div class="log_main cjUser">
-                        <p class="pBgs"><span class="lf"><input id="registerphone" name="registerphone" type="text" placeholder="请输入手机号" value=""/></span>
+                        <p class="pBgs"><span class="lf"><input id="registerphone" onblur="blurphone()" name="phone" type="text" placeholder="请输入手机号" value=""/></span>
+
                             <a class="yzmBtn" id="J_getCode" href="javascript:void(0)" onclick ="clickyzmBtn();return false;">发送验证码</a>
                             <a class="yzmBtn hide" href="javascript:void(0)" id="J_resetCode" ><span id="J_second">60</span>秒后重发</a>
-                        </p>
 
+                        </p>
+                        <span id="validatephone"></span><br/>
+                        <span id="code2"></span>
                         <p class="pBgs"><input id="phonecode"  name="phonecode" type="text" autocomplete="off" placeholder="请输入短信验证码"/></p>
                         <p class="pBgs"><input id ="nickname"  name="nickname"  type="text" autocomplete="off" placeholder="请输入2-16个字的昵称" value=""/></p>
-                        <p class="pBgs"><input  id ="pwd" name="pwd" type="password" autocomplete="off" placeholder="请输入密码(6-20位字母、数字)" value=""/></p>
+                        <p class="pBgs"><input  id ="pwd" name="password" type="password" autocomplete="off" placeholder="请输入密码(6-20位字母、数字)" value=""/></p>
                         <p class="pBgs"><input id ="pwdss" naem="pwdss"type="password" autocomplete="off" placeholder="请确认密码" value=""/></p>
                         <input type="hidden" id="service" name="service" value="https://hz.5i5j.com/reglogin/index?preUrl=https://hz.5i5j.com/ershoufang?pmf_group=baidu&pmf_medium=cpc&pmf_plan=%E4%BA%8C%E6%89%8B%E6%88%BF%E7%B2%BE%E7%A1%AE&pmf_unit=%E4%BA%8C%E6%89%8B%E6%88%BF&pmf_keyword=%E4%BA%8C%E6%89%8B%E6%88%BF&pmf_account=75&pmf_id=23100403845" />
                         <input type="hidden" id="status" name="status" value="1" />
@@ -379,7 +398,6 @@
                 <p>已有我爱我家账号：<span class="marTop10"><a class="regBtn log-in marTop10" href=/login>直接登录<i></i></a></span></p>
                 <p>使用以下账号直接登录</p>
                 <ul class="sf-login"><li><a onmousedown="_trackData.push(['addaction','PC_HZ_登录页','登录按钮']);	ga('send','event','PC_BJ_登录页','登录按钮','PC_HZ_登录页_登录按钮');" class="wx" href=/passport/wxlogin.do?service=https://hz.5i5j.com/reglogin/index?preUrl=https://hz.5i5j.com/ershoufang?pmf_group=baidu&pmf_medium=cpc&pmf_plan=%E4%BA%8C%E6%89%8B%E6%88%BF%E7%B2%BE%E7%A1%AE&pmf_unit=%E4%BA%8C%E6%89%8B%E6%88%BF&pmf_keyword=%E4%BA%8C%E6%89%8B%E6%88%BF&pmf_account=75&pmf_id=23100403845>微信</a></li><li><a onmousedown="_trackData.push(['addaction','PC_HZ_登录页','登录按钮']);	ga('send','event','PC_BJ_登录页','登录按钮','PC_BJ_登录页_登录按钮');"  class="qq" href=/passport/qqlogin.do?service=https://hz.5i5j.com/reglogin/index?preUrl=https://hz.5i5j.com/ershoufang?pmf_group=baidu&pmf_medium=cpc&pmf_plan=%E4%BA%8C%E6%89%8B%E6%88%BF%E7%B2%BE%E7%A1%AE&pmf_unit=%E4%BA%8C%E6%89%8B%E6%88%BF&pmf_keyword=%E4%BA%8C%E6%89%8B%E6%88%BF&pmf_account=75&pmf_id=23100403845>QQ</a></li><li><a  onmousedown="_trackData.push(['addaction','PC_HZ_登录页','登录按钮']);	ga('send','event','PC_BJ_登录页','登录按钮','PC_BJ_登录页_登录按钮');" class="xl" href=/passport/wblogin.do?service=https://hz.5i5j.com/reglogin/index?preUrl=https://hz.5i5j.com/ershoufang?pmf_group=baidu&pmf_medium=cpc&pmf_plan=%E4%BA%8C%E6%89%8B%E6%88%BF%E7%B2%BE%E7%A1%AE&pmf_unit=%E4%BA%8C%E6%89%8B%E6%88%BF&pmf_keyword=%E4%BA%8C%E6%89%8B%E6%88%BF&pmf_account=75&pmf_id=23100403845>新浪</a></li></ul>
-                <div class="ewmBox"><img src="picture/ewm.png"><p>[扫描下载我爱我家APP]</p></div>
             </div>
         </div>
     </form>
@@ -444,7 +462,44 @@
 </div>
 <!-- 服务条款 End -->
 
-<script src="js/tdz.js"></script>
+<script src="/static/js/tdz.js"></script>
+
+<script type="text/javascript">
+    function blurphone() {
+        var phone=$('#registerphone').val();
+        $.ajax({
+            url:'/user/registerByphone',
+            dataType:"json",
+            data:{"phone":phone},
+            type:"post",
+            success:function (data) {
+                if(data.code==1){
+                    $("#validatephone").html("该手机号已被注册");
+                    $("#validatephone").css({
+                        "color":"red"
+                    })
+                }
+                else if(data.code==0) {
+                    $("#validatephone").html("该手机号未被注册");
+                    $("#validatephone").css({
+                        "color":"green"
+                    })
+                }
+                else if(data.code==2){
+                    $("#validatephone").html("手机号格式不正确");
+                    $("#validatephone").css({
+                        "color":"red"
+                    })
+                }
+                console.log(data)
+                $("#validatephone").show();
+            },
+            error:function () {
+                alert('错误代码');
+            }
+        })
+    }
+</script>
 <script type="text/javascript">
     /* 发送成功后显示倒计时 */
     var succee=document.getElementById('succee').value;
@@ -481,7 +536,7 @@
 
 
 
-<script id="phpstat_js_id_10000001" src="js/10000002.js"></script>
+<script id="phpstat_js_id_10000001" src="/static/js/10000002.js"></script>
 
 
 

@@ -17,5 +17,8 @@
         <module name="webserviceImpl" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="commonssolr" target="1.5" />
+    </bytecodeTargetLevel>
   </component>
 </project>

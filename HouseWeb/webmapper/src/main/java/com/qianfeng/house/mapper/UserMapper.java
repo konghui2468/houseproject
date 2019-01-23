@@ -1,7 +1,11 @@
 package com.qianfeng.house.mapper;
 
+import com.qianfeng.house.pojo.House;
+import com.qianfeng.house.pojo.user;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
+
+import java.util.List;
 
 /**
  * @Author: Mr.kong de qian ming
@@ -10,7 +14,13 @@ import org.apache.ibatis.annotations.Select;
  */
 public interface UserMapper {
 
-    @Select("select * from user where username=#{name} and password=#{password}")
-    Integer QueryUser(@Param("name") String name, @Param("password") String password);
+     user queryByphone(@Param("phone") String phone);
+
+     Integer InsertUser(user user);
+
+     @Select("select * from house ")
+     List<House> QueryHouse();
+
+     user queryByuser(@Param("phone") String phone,@Param("password") String password);
 
 }

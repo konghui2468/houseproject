@@ -62,6 +62,12 @@ public class CodeController {
     @Autowired
     private RedisClientInterface redisClientInterface;
 
+    /**
+     * 生成图形验证码
+     * @param request
+     * @param response
+     * @throws IOException
+     */
     @RequestMapping("/utils/code")
     public void Code(HttpServletRequest request, HttpServletResponse response) throws IOException {
         //生成图形验证码
@@ -113,11 +119,17 @@ public class CodeController {
 
     }
 
+    /**
+     * 生成手机验证码
+     * @param request
+     * @param response
+     * @return
+     */
     @RequestMapping("/utils/phonecode")
     @ResponseBody
     public Map<String,Object> PhoneCode(HttpServletRequest request, HttpServletResponse response){
         StringUtils utils=new StringUtils();
-        String phonecode = utils.StringUtils1();//生成随机数的四位验证码
+        String phonecode = utils.StringUtils1();//生成随机数的6位验证码
         //并将其存放到Redis中
         Jedis jedis = redisClientInterface.getJedis();
         //将Cookies当Redis的Key值
@@ -140,14 +152,14 @@ public class CodeController {
 
             }
             if(flag){
-                //将刚刚的RedisKey作为Key,value为新的Code
+                //将刚刚的Value作为Key,value为新的Code
                 redisClientInterface.setex(value,phonecode,60,jedis);
             }
 
 
         }
         if(!flag){
-            //给RedisKey手动赋予一个UUID值
+            //给value手动赋予一个UUID值
             value=UUID.randomUUID().toString().replaceAll("-","");
             //存放到Redis中
             redisClientInterface.setex(value,phonecode,60,jedis);

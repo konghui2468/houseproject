@@ -31,6 +31,12 @@ package com.qianfeng.house.service;
 //                  别人笑我忒疯癫，我笑自己命太贱；  
 //  
 
+import com.qianfeng.house.pojo.House;
+import com.qianfeng.house.pojo.user;
+
+import java.util.List;
+import java.util.Map;
+
 /**
  * @Author: Mr.kong de qian ming
  * @CreateDate: 2019/1/16 20:59
@@ -39,6 +45,16 @@ package com.qianfeng.house.service;
 
 public interface UserService {
 
-    Integer QueryUser(String name,String password);
+    user QueryUser(String phone);
+
+    Integer InsertUser(user user);
+
+
+    List<House> queryHouse();
+
+    Map<String,Object> searchTHByKeyword(String keyword, Integer pageIndex, Integer pageSize);
+
+    user queryByuser(String phone,String password);
+
 
 }

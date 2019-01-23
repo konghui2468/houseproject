@@ -41,19 +41,38 @@ public class user {
 
     private Integer id;
     private String username;
+    private String nickname;
     private String phone;
     private String password;
-    private String passwordSalt;
+    private String passwordsalt;
+
 
     @Override
     public String toString() {
         return "user{" +
                 "id=" + id +
                 ", username='" + username + '\'' +
+                ", nickname='" + nickname + '\'' +
                 ", phone='" + phone + '\'' +
                 ", password='" + password + '\'' +
-                ", passwordSalt='" + passwordSalt + '\'' +
+                ", passwordsalt='" + passwordsalt + '\'' +
                 '}';
+    }
+
+    public String getPasswordsalt() {
+        return passwordsalt;
+    }
+
+    public void setPasswordsalt(String passwordsalt) {
+        this.passwordsalt = passwordsalt;
+    }
+
+    public String getNickname() {
+        return nickname;
+    }
+
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
     }
 
     public Integer getId() {
@@ -86,13 +105,5 @@ public class user {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public String getPasswordSalt() {
-        return passwordSalt;
-    }
-
-    public void setPasswordSalt(String passwordSalt) {
-        this.passwordSalt = passwordSalt;
     }
 }

@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: hjg
@@ -58,8 +59,15 @@
             </ul>
         </div>
         <div class="top-login" id="userlogin">
-            <a href="/reglogin/index?preUrl=https%3A%2F%2Fhz.5i5j.com%2Fershoufang%3Fpmf_group%3Dbaidu%26login%3D1" target="" class="log" rel="nofollow">登录</a>
-            <a href="http://passport.5i5j.com:80/passport/register?service=https://hz.5i5j.com%2Freglogin%2Findex?preUrl=https%3A%2F%2Fhz.5i5j.com%2Fershoufang%3Fpmf_group%3Dbaidu%26login%3D1&status=1&city=hz" target="_blank" rel="nofollow">注册</a>
+            <c:if test="${!empty user}">
+                <a  href="/userManagerindex?${user.nickname}" class="log" ref="nofllow">${user.nickname}</a>
+                <a href="/user/logout" target="" class="logout" rel="nofollow">注销</a>
+            </c:if>
+            <c:if test="${empty user}">
+                <a href="/login" target="" class="log" rel="nofollow">登录</a>
+                <a href="/register" target="_blank" rel="nofollow">注册</a>
+
+            </c:if>
         </div>
         <ul class="top-nav">
             <li class="cur">
@@ -358,296 +366,47 @@
         <!-- 经纪人展位 End-->
         <div class="list-con-box">
             <!-- houses_list start-->
-            <ul class="pList">        <li>
-                <div class="listImg" onmousedown="_trackData.push(['addaction','PC_hz_二手房列表页','房源位置1']);"><a href="/ershoufang/90087474.html" target="_blank">
-                    <!--<img src="">-->
-                    <img class="lazy" onerror="houseimgerror(this,1)" src="picture/0867a71f-1a82-4943-847d-e0b802810d51.jpg" title="碧云阁70年产权 南北通透采光好可做两房 居住安静诚心出售" alt="碧云阁70年产权 南北通透采光好可做两房 居住安静诚心出售">
+            <ul class="pList">
+                <c:forEach items="${hl}" var="tH">
+                    <li>
+                        <div class="listImg" onmousedown="_trackData.push(['addaction','PC_hz_二手房列表页','房源位置2']);"><a href="${tH.tUrl}" target="_blank">
+                            <!--<img src="">-->
+                            <img class="lazy" onerror="houseimgerror(this,1)" src="https://aihome.aihome365.cn/2018/09/ad2a80c1-327e-4d01-8869-5b5b2a759d2d.jpg?x-oss-process=style/P7" title="中兴公寓 刚需两房 装修清爽 房东诚心卖" alt="中兴公寓 刚需两房 装修清爽 房东诚心卖">
 
-                    <span class="icon3d"></span>
-                </a>
-                </div>
-
-            </li>
-                <li>
-                    <div class="listImg" onmousedown="_trackData.push(['addaction','PC_hz_二手房列表页','房源位置2']);"><a href="/ershoufang/90060518.html" target="_blank">
-                        <!--<img src="">-->
-                        <img class="lazy" onerror="houseimgerror(this,1)" src="picture/8550fdac-95c3-43ea-98a7-5901d86ff517.jpg" title="中兴公寓 刚需两房 装修清爽 房东诚心卖" alt="中兴公寓 刚需两房 装修清爽 房东诚心卖">
-
-                        <span class="icon3d"></span>
-                    </a>
+                            <span class="icon3d"></span>
+                        </a>
+                        </div>
+                        <div class="listCon">
+                            <h3 class="listTit">
+                                <a href="${tH.tUrl}" target="_blank"  onmousedown="_trackData.push(['addaction','PC_hz_二手房列表页','房源位置2']);">${tH.tName}</a>
+                            </h3>
+                            <div class="listX">
+                                <!-- <p><i class="i_01"></i>4室2厅· 192.67平米· 南北 ·中层/11层 ·精装</p> -->
+                                <p><i class="i_01"></i>${tH.room1}室${tH.room2}厅${tH.room3}卫·${tH.area} 平米  ·  ${tH.location} ·  ${tH.level}层/${tH.tier}层  ·  ${tH.packType}</p>
+                                <p><i class="i_02"></i><a target="_blank">文二西路 中兴公寓</a> <!-- · 地铁10号线 --></p>
+                                <p><i class="i_03"></i>19  人关注 · 近30天带看  15  次  ·  2018-06-16发布</p>
+                                <div class="jia">
+                                    <p class="redC"><strong>${tH.price}</strong>万</p>
+                                    <p>单价18543元/m²</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </c:forEach>
+                <c:if test="${empty hl}">
+                    <div class="nodata">
+                        <div class="error_icon"><img src="https://res.5i5j.com/pc/common/images/error_icon.png"> </div>
+                        <div class="tywzi">
+                            <p>没有找到符合条件的相关二手房</p>
+                            <p>您可换个条件试下</p>
+                        </div>
                     </div>
+                </c:if>
 
-                </li>
-                <li>
-                    <div class="listImg" onmousedown="_trackData.push(['addaction','PC_hz_二手房列表页','房源位置3']);"><a href="/ershoufang/8394106.html" target="_blank">
-                        <!--<img src="">-->
-                        <img class="lazy" onerror="houseimgerror(this,1)" src="picture/fd860727-07a5-4929-99a6-830cef8e4c17.jpg" title="老城区次新小区，拎包入住，楼层适中，采光无忧，生活交通便利" alt="老城区次新小区，拎包入住，楼层适中，采光无忧，生活交通便利">
 
-                        <span class="icon3d"></span>
-                    </a>
-                    </div>
 
-                </li>
-                <li>
-                    <div class="listImg" onmousedown=""><a href="/ershoufang/90092948.html" target="_blank">
-                        <!--<img src="">-->
-                        <img class="lazy" onerror="houseimgerror(this,1)" src="picture/3fe2d4f1-748d-4ca1-b19c-32974fa49bec.jpg" title="广宇锦绣桃源 精装中高楼层 小区中间不吵闹 环境优美" alt="广宇锦绣桃源 精装中高楼层 小区中间不吵闹 环境优美">
 
-                        <span class="icon3d"></span>
-                    </a>
-                    </div>
 
-                </li>
-                <li>
-                    <div class="listImg" onmousedown=""><a href="/ershoufang/90091646.html" target="_blank">
-                        <!--<img src="">-->
-                        <img class="lazy" onerror="houseimgerror(this,1)" src="picture/45c59078-00f7-4322-a636-0a63a4aca23e.jpg" title="星光国际公馆，星光大道，租金四千五，看房方便，有钥匙。" alt="星光国际公馆，星光大道，租金四千五，看房方便，有钥匙。">
-
-                        <span class="icon3d"></span>
-                    </a>
-                    </div>
-
-                </li>
-                <li>
-                    <div class="listImg" onmousedown=""><a href="/ershoufang/90084926.html" target="_blank">
-                        <!--<img src="">-->
-                        <img class="lazy" data-src="picture/c190cd86-c7c3-4f6f-9bb9-482c44e6c4d4.jpg" title="全明户型 南北通透 业主急卖 生活交通方便 送储藏室" alt="全明户型 南北通透 业主急卖 生活交通方便 送储藏室" data-onerror="houseimgerror(this,1)">
-
-                        <span class="icon3d"></span>
-                    </a>
-                    </div>
-
-                </li>
-                <li>
-                    <div class="listImg" onmousedown=""><a href="/ershoufang/90081658.html" target="_blank">
-                        <!--<img src="">-->
-                        <img class="lazy" data-src="picture/6d6b883b-3872-4d7e-b2bd-2caccabf3d80.jpg" title=" 北景园清爽装修小两房 户型方正 房东诚心售卖" alt=" 北景园清爽装修小两房 户型方正 房东诚心售卖" data-onerror="houseimgerror(this,1)">
-
-                        <span class="icon3d"></span>
-                    </a>
-                    </div>
-
-                </li>
-                <li>
-                    <div class="listImg" onmousedown=""><a href="/ershoufang/90033721.html" target="_blank">
-                        <!--<img src="">-->
-                        <img class="lazy" data-src="picture/453f25bb-a6cd-478d-9988-e0b08d323fce.jpg" title="性价比高  楼层好 总价低 得房率高 诚心出售" alt="性价比高  楼层好 总价低 得房率高 诚心出售" data-onerror="houseimgerror(this,1)">
-
-                        <span class="icon3d"></span>
-                    </a>
-                    </div>
-
-                </li>
-                <li>
-                    <div class="listImg" onmousedown=""><a href="/ershoufang/90107341.html" target="_blank">
-                        <!--<img src="">-->
-                        <img class="lazy" data-src="picture/4a8683cc-8d75-4a88-9864-f2e2a487f1cd.jpg" title="浙江大学门口 省厅级以上领导房改房 3南1北 4楼阳光好" alt="浙江大学门口 省厅级以上领导房改房 3南1北 4楼阳光好" data-onerror="houseimgerror(this,1)">
-
-                        <span class="icon3d"></span>
-                    </a>
-                    </div>
-
-                </li>
-                <li>
-                    <div class="listImg" onmousedown=""><a href="/ershoufang/90106723.html" target="_blank">
-                        <!--<img src="">-->
-                        <img class="lazy" data-src="picture/ac198ce3-9a93-4a26-888d-7ff25b8e353d.jpg" title="70年产权，带阳台通天然气精装拎包入住" alt="70年产权，带阳台通天然气精装拎包入住" data-onerror="houseimgerror(this,1)">
-
-                        <span class="icon3d"></span>
-                    </a>
-                    </div>
-
-                </li>
-                <li>
-                    <div class="listImg" onmousedown=""><a href="/ershoufang/90065353.html" target="_blank">
-                        <!--<img src="">-->
-                        <img class="lazy" data-src="picture/220606f3-2729-4a40-9436-018db9df67a4.jpg" title="全景江景房，一线江景尽收眼底，满足阳光，江景两个条件的不多。" alt="全景江景房，一线江景尽收眼底，满足阳光，江景两个条件的不多。" data-onerror="houseimgerror(this,1)">
-
-                        <span class="icon3d"></span>
-                    </a>
-                    </div>
-
-                </li>
-                <li>
-                    <div class="listImg" onmousedown=""><a href="/ershoufang/33931224.html" target="_blank">
-                        <!--<img src="">-->
-                        <img class="lazy" data-src="picture/98414e4e-2485-4be5-b87a-0730fef52794.jpg" title="北景园莲趣苑 新出好房 南北通透 全明户型" alt="北景园莲趣苑 新出好房 南北通透 全明户型" data-onerror="houseimgerror(this,1)">
-
-                        <span class="icon3d"></span>
-                    </a>
-                    </div>
-
-                </li>
-                <li>
-                    <div class="listImg" onmousedown=""><a href="/ershoufang/90109306.html" target="_blank">
-                        <!--<img src="">-->
-                        <img class="lazy" data-src="picture/5e566e9d-70ae-468e-a584-951bd7f4760d.jpg" title="九龙仓碧玺 新出好房 总价低，房东自住装修 低于市场价" alt="九龙仓碧玺 新出好房 总价低，房东自住装修 低于市场价" data-onerror="houseimgerror(this,1)">
-
-                        <span class="icon3d"></span>
-                    </a>
-                    </div>
-
-                </li>
-                <li>
-                    <div class="listImg" onmousedown=""><a href="/ershoufang/90107328.html" target="_blank">
-                        <!--<img src="">-->
-                        <img class="lazy" data-src="picture/b54407ac-0b08-4bba-bfd8-3c097af1b608.jpg" title="一梯两户，两房朝南，全明西边套" alt="一梯两户，两房朝南，全明西边套" data-onerror="houseimgerror(this,1)">
-
-                        <span class="icon3d"></span>
-                    </a>
-                    </div>
-
-                </li>
-                <li>
-                    <div class="listImg" onmousedown=""><a href="/ershoufang/90098939.html" target="_blank">
-                        <!--<img src="">-->
-                        <img class="lazy" data-src="picture/0971447f-fdea-4e64-9f7b-38747864b57d.jpg" title="永安坊 经典一室户型 南北通透 位置安静 出行方便" alt="永安坊 经典一室户型 南北通透 位置安静 出行方便" data-onerror="houseimgerror(this,1)">
-
-                        <span class="icon3d"></span>
-                    </a>
-                    </div>
-
-                </li>
-                <li>
-                    <div class="listImg" onmousedown=""><a href="/ershoufang/90098813.html" target="_blank">
-                        <!--<img src="">-->
-                        <img class="lazy" data-src="picture/7e91eac0-a0aa-437c-bf9a-8e3602b117e5.jpg" title="北上新城，精装修公寓，民用水电，出租自住都好" alt="北上新城，精装修公寓，民用水电，出租自住都好" data-onerror="houseimgerror(this,1)">
-
-                        <span class="icon3d"></span>
-                    </a>
-                    </div>
-                </li>
-
-                <li>
-                    <div class="listImg" onmousedown=""><a href="/ershoufang/90083800.html" target="_blank">
-                        <!--<img src="">-->
-                        <img class="lazy" data-src="picture/9970fe7c-b8ba-44ed-9ce4-6884e4f33037.jpg" title="碧云阁70年产权 东边套全明户型采光好 低总价低首付看房方便" alt="碧云阁70年产权 东边套全明户型采光好 低总价低首付看房方便" data-onerror="houseimgerror(this,1)">
-
-                        <span class="icon3d"></span>
-                    </a>
-                    </div>
-
-                </li>
-                <li>
-                    <div class="listImg" onmousedown=""><a href="/ershoufang/90082112.html" target="_blank">
-                        <!--<img src="">-->
-                        <img class="lazy" data-src="picture/035b988a-e4f4-478d-bb7b-54fe127e44af.jpg" title="近江家园 天地实验 不占学籍 两房装修清爽 看房方便有钥匙" alt="近江家园 天地实验 不占学籍 两房装修清爽 看房方便有钥匙" data-onerror="houseimgerror(this,1)">
-
-                        <span class="icon3d"></span>
-                    </a>
-                    </div>
-
-                </li>
-                <li>
-                    <div class="listImg" onmousedown=""><a href="/ershoufang/90080619.html" target="_blank">
-                        <!--<img src="">-->
-                        <img class="lazy" data-src="picture/231743d5-974b-448b-a251-362c73dce63b.jpg" title="拱墅运河之星 户型方正 房东自住 精装三房 安静舒适" alt="拱墅运河之星 户型方正 房东自住 精装三房 安静舒适" data-onerror="houseimgerror(this,1)">
-
-                        <span class="icon3d"></span>
-                    </a>
-                    </div>
-
-                </li>
-                <li>
-                    <div class="listImg" onmousedown=""><a href="/ershoufang/90079366.html" target="_blank">
-                        <!--<img src="">-->
-                        <img class="lazy" data-src="picture/c7d04a93-8a0e-445e-a5b8-dca0f3bf4029.jpg" title="江干区北城枫景园，南北通透，中间楼层，主卧朝南带阳台" alt="江干区北城枫景园，南北通透，中间楼层，主卧朝南带阳台" data-onerror="houseimgerror(this,1)">
-
-                        <span class="icon3d"></span>
-                    </a>
-                    </div>
-
-                </li>
-                <li>
-                    <div class="listImg" onmousedown=""><a href="/ershoufang/90072148.html" target="_blank">
-                        <!--<img src="">-->
-                        <img class="lazy" data-src="picture/b57bb903-0012-47d8-a271-e4cde81eed2e.jpg" title="董家弄2012年的房子，南北通透！格局好装修可自行设计！" alt="董家弄2012年的房子，南北通透！格局好装修可自行设计！" data-onerror="houseimgerror(this,1)">
-
-                        <span class="icon3d"></span>
-                    </a>
-                    </div>
-
-                </li>
-                <li>
-                    <div class="listImg" onmousedown=""><a href="/ershoufang/90072097.html" target="_blank">
-                        <!--<img src="">-->
-                        <img class="lazy" data-src="picture/7f65a5ad-4d95-4d85-bfd6-4dc8809cd2df.jpg" title="南润名座 精装两房 房东诚心出售 格局好" alt="南润名座 精装两房 房东诚心出售 格局好" data-onerror="houseimgerror(this,1)">
-
-                        <span class="icon3d"></span>
-                    </a>
-                    </div>
-
-                </li>
-                <li>
-                    <div class="listImg" onmousedown=""><a href="/ershoufang/90070598.html" target="_blank">
-                        <!--<img src="">-->
-                        <img class="lazy" data-src="picture/b0a7f5bf-f736-4bc3-af10-0ea111ed4450.jpg" title="福利新村小区，城站旁边，养老自住好房，租金高，精装修" alt="福利新村小区，城站旁边，养老自住好房，租金高，精装修" data-onerror="houseimgerror(this,1)">
-
-                        <span class="icon3d"></span>
-                    </a>
-                    </div>
-
-                </li>
-                <li>
-                    <div class="listImg" onmousedown=""><a href="/ershoufang/90069935.html" target="_blank">
-                        <!--<img src="">-->
-                        <img class="lazy" data-src="picture/f3b646ca-5708-4ea5-beb6-ebb45d7a7b91.jpg" title="锦园 两南一北 户型正气 南北通透 一梯两户 三楼阳光好" alt="锦园 两南一北 户型正气 南北通透 一梯两户 三楼阳光好" data-onerror="houseimgerror(this,1)">
-
-                        <span class="icon3d"></span>
-                    </a>
-                    </div>
-
-                </li>
-                <li>
-                    <div class="listImg" onmousedown=""><a href="/ershoufang/90069887.html" target="_blank">
-                        <!--<img src="">-->
-                        <img class="lazy" data-src="picture/c062de43-11b2-454d-95af-167248332b0c.jpg" title="南肖埠北景西苑，中间楼层，两房朝南，户型方正，诚心卖" alt="南肖埠北景西苑，中间楼层，两房朝南，户型方正，诚心卖" data-onerror="houseimgerror(this,1)">
-
-                        <span class="icon3d"></span>
-                    </a>
-                    </div>
-
-                </li>
-                <li>
-                    <div class="listImg" onmousedown=""><a href="/ershoufang/90062346.html" target="_blank">
-                        <!--<img src="">-->
-                        <img class="lazy" data-src="picture/2eb728d1-b831-4d0d-96ae-1f4f95549ee1.jpg" title="三里家园二区好房出售，成熟小区全明户型南北通透采光好" alt="三里家园二区好房出售，成熟小区全明户型南北通透采光好" data-onerror="houseimgerror(this,1)">
-
-                        <span class="icon3d"></span>
-                    </a>
-                    </div>
-
-                </li>
-                <li>
-                    <div class="listImg" onmousedown=""><a href="/ershoufang/90062315.html" target="_blank">
-                        <!--<img src="">-->
-                        <img class="lazy" data-src="picture/c2c2f0ae-6567-4eed-94eb-443aa5ae117e.jpg" title="大塘新村，中间楼层，卖掉换房，两房朝南。" alt="大塘新村，中间楼层，卖掉换房，两房朝南。" data-onerror="houseimgerror(this,1)">
-
-                        <span class="icon3d"></span>
-                    </a>
-                    </div>
-
-                </li>
-                <li>
-                    <div class="listImg" onmousedown=""><a href="/ershoufang/90037813.html" target="_blank">
-                        <!--<img src="">-->
-                        <img class="lazy" data-src="picture/ddf74565-cc6a-40db-bb63-8aa16a7e715c.jpg" title="小区彩虹城规模成熟，房子精装好，保养新，看房方便" alt="小区彩虹城规模成熟，房子精装好，保养新，看房方便" data-onerror="houseimgerror(this,1)">
-
-                        <span class="icon3d"></span>
-                    </a>
-                    </div>
-
-                </li>
-                <li>
-                    <div class="listImg" onmousedown=""><a href="/ershoufang/90037648.html" target="_blank">
-                        <!--<img src="">-->
-                        <img class="lazy" data-src="picture/70ed2125-ceb4-4c87-9112-dd6bcddc82f9.jpg" title="江南实验 绿城物业 麻雀虽小 五脏齐全 价格好" alt="江南实验 绿城物业 麻雀虽小 五脏齐全 价格好" data-onerror="houseimgerror(this,1)">
-
-                        <span class="icon3d"></span>
-                    </a>
-                    </div>
-
-                </li>
             </ul>
             <!-- houses_list End -->
         </div>
@@ -945,7 +704,7 @@
 
 <script type="text/javascript" src="/static/js/superslide.js"></script>
 <script type="text/javascript" src="/static/js/znxf.js"></script>
-<script type="text/javascript" src="/static/js/jquery-ui.min.js"></script>
+<script type="text/javascript" src=/static/js/jquery-ui.min.js"></script>
 <script type="text/javascript" src="/static/js/range.min.js"></script>
 <style>
     .webim-msg-img {

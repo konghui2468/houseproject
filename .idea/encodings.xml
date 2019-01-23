@@ -12,6 +12,7 @@
     <file url="file://$PROJECT_DIR$/HousedCommons/commonsStringUtils" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/HousedCommons/commonscode" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/HousedCommons/commonsredis" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/HousedCommons/commonssolr" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/HousedManager" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />
   </component>

@@ -57,6 +57,27 @@ public class StringUtils {
         return stringBuffer.toString();
     }
 
+
+     /**
+     * 随机生成8位数的盐值
+     * @param
+     */
+
+     public String Stringpasswordsalt(){
+         StringBuffer stringBuffer=new StringBuffer();
+         int count=0;
+         while (count<8){
+             int i = (int) (Math.random() * 123);//生成0-122的随机数字
+             if((i>=48&i<=57)||(i>=65&i<=90)||(i>=97&i<=122))//指定生成0-9，a-z,A-Z
+             {
+                 stringBuffer.append((char) i);
+                 count ++;
+             }
+         }
+         return stringBuffer.toString();
+     }
+
+
     public static void main(String[] args) {
         StringUtils stringUtils=new StringUtils();
         String s = stringUtils.StringUtils1();
