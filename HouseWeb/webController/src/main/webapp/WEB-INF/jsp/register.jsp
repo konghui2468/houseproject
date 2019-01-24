@@ -290,7 +290,48 @@
         /*注册  */
         function clicksubmit(){
             if(checkinput()){
-                document.forms[0].submit();
+                var phone=$('#registerphone').val();
+                var phonecode1=$('#phonecode').val();
+                    $.ajax({
+                        url:'/user/registerByphone',
+                        dataType:"json",
+                        data:{"phone":phone,"phonecode":phonecode1},
+                        type:"post",
+                        success:function (data) {
+                            if(data.code==1){
+                                $("#validatephone").html("");
+                                $("#validatephone").html("该手机号已被注册或者验证码错误");
+                                $("#validatephone").css({
+                                    "color":"red"
+                                })
+                                showBtn();
+
+                            }
+                            else if(data.code==2){
+                                $("#validatephone").html("");
+                                $("#validatephone").html("验证码已过期，请重新发送");
+                                $("#validatephone").css({
+                                    "color":"red"
+                                })
+                                showBtn();
+                            }
+                            else if(data.code==0) {
+                                $("#validatephone").html("");
+                                $("#validatephone").html("该手机号未被注册且验证码正确");
+                                $("#validatephone").css({
+                                    "color":"green"
+                                })
+                                document.forms[0].submit();
+                            }
+                            console.log(data)
+                            $("#validatephone").show();
+                        },
+                        error:function () {
+                            alert('错误代码');
+                        }
+                    })
+
+
             }
         }
 
@@ -348,7 +389,7 @@
             <div class="login-left lf">
                 <div class="login-con">
                     <div class="log_main cjUser">
-                        <p class="pBgs"><span class="lf"><input id="registerphone" onblur="blurphone()" name="phone" type="text" placeholder="请输入手机号" value=""/></span>
+                        <p class="pBgs"><span class="lf"><input id="registerphone"  name="phone" type="text" placeholder="请输入手机号" value=""/></span>
 
                             <a class="yzmBtn" id="J_getCode" href="javascript:void(0)" onclick ="clickyzmBtn();return false;">发送验证码</a>
                             <a class="yzmBtn hide" href="javascript:void(0)" id="J_resetCode" ><span id="J_second">60</span>秒后重发</a>
@@ -357,6 +398,7 @@
                         <span id="validatephone"></span><br/>
                         <span id="code2"></span>
                         <p class="pBgs"><input id="phonecode"  name="phonecode" type="text" autocomplete="off" placeholder="请输入短信验证码"/></p>
+                        <span id="validatecode"></span>
                         <p class="pBgs"><input id ="nickname"  name="nickname"  type="text" autocomplete="off" placeholder="请输入2-16个字的昵称" value=""/></p>
                         <p class="pBgs"><input  id ="pwd" name="password" type="password" autocomplete="off" placeholder="请输入密码(6-20位字母、数字)" value=""/></p>
                         <p class="pBgs"><input id ="pwdss" naem="pwdss"type="password" autocomplete="off" placeholder="请确认密码" value=""/></p>
@@ -464,42 +506,7 @@
 
 <script src="/static/js/tdz.js"></script>
 
-<script type="text/javascript">
-    function blurphone() {
-        var phone=$('#registerphone').val();
-        $.ajax({
-            url:'/user/registerByphone',
-            dataType:"json",
-            data:{"phone":phone},
-            type:"post",
-            success:function (data) {
-                if(data.code==1){
-                    $("#validatephone").html("该手机号已被注册");
-                    $("#validatephone").css({
-                        "color":"red"
-                    })
-                }
-                else if(data.code==0) {
-                    $("#validatephone").html("该手机号未被注册");
-                    $("#validatephone").css({
-                        "color":"green"
-                    })
-                }
-                else if(data.code==2){
-                    $("#validatephone").html("手机号格式不正确");
-                    $("#validatephone").css({
-                        "color":"red"
-                    })
-                }
-                console.log(data)
-                $("#validatephone").show();
-            },
-            error:function () {
-                alert('错误代码');
-            }
-        })
-    }
-</script>
+
 <script type="text/javascript">
     /* 发送成功后显示倒计时 */
     var succee=document.getElementById('succee').value;

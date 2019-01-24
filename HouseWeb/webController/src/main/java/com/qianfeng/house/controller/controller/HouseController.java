@@ -38,7 +38,6 @@ import com.qianfeng.house.service.UserService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -46,6 +45,7 @@ import redis.clients.jedis.Jedis;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -123,11 +123,11 @@ public class HouseController {
    }
 
    @RequestMapping("/login")
-    public String Houselogin(String phone, Model model)
+    public String Houselogin(String phone, HttpSession session)
     {
         user user = userService.QueryUser(phone);
         if(user!=null){
-            model.addAttribute("user",user);
+           session.setAttribute("user",user);
             return "index";
         }
         else {
@@ -212,26 +212,38 @@ public class HouseController {
         return null;
     }
     /**
-     * 查询手机号是否被驻村
+     * 提交注册时查询手机号是否被注册以及验证码是否正确以及验证码是否过期
      */
 
     @RequestMapping("/registerByphone")
     @ResponseBody
-    public Map<String,Object> RegisterByphone(String phone){
+    public Map<String,Object> RegisterByphone(String phone,String phonecode,HttpServletRequest request){
         Map<String,Object> map=new HashMap<>();
         //手机号正则表达式
         String regis="^1[3456789]\\d{9}$";
-        if(phone.matches(regis)){
+        Jedis jedis = redisClientInterface.getJedis();
+        //取出存放在Redis的值
+        String redisValue="";
+        Cookie[] cookies = request.getCookies();
+        if(cookies!=null){
+            for (Cookie cookie : cookies) {
+                String name = cookie.getName();
+                if(name.equals("phonecode")){
+                    String value = cookie.getValue();
+                    redisValue = redisClientInterface.get(value, jedis);//该值就是验证码
+                }
+            }
+        }
+        if(phone.matches(regis)&&redisValue!=null){
             user user = userService.QueryUser(phone);
-            if(user!=null){
+            if(user!=null||!redisValue.equalsIgnoreCase(phonecode)){
                 map.put("code",1);
             }
-            else {
+            else if(user==null&&redisValue.equalsIgnoreCase(phonecode)) {
                 map.put("code",0);
             }
 
-        }
-        else {
+        }else if(redisValue==null){
             map.put("code",2);
         }
 
@@ -242,16 +254,16 @@ public class HouseController {
      * 注销
      */
     @RequestMapping("/logout")
-    public String logout(HttpServletRequest request){
-        request.getSession().invalidate();
+    public String logout(HttpSession session){
+        session.invalidate();
         return "portal";
     }
 
     /**
-     * 手机号注册
+     * 手机号登录
      */
     @RequestMapping("/logonByphone")
-    public String loginByphone(String username,String password,Model model){
+    public String loginByphone(String username,String password,HttpSession session){
         System.out.println(username);
         user user1 = userService.QueryUser(username);
         if(user1!=null){
@@ -260,7 +272,7 @@ public class HouseController {
             String md5Pass = encrypUtil2.md5Pass(password, passwordsalt);
             com.qianfeng.house.pojo.user user = userService.queryByuser(username, md5Pass);
             if(user!=null){
-                model.addAttribute("user", user);
+                session.setAttribute("user",user);
                 return "index";
             }
         }

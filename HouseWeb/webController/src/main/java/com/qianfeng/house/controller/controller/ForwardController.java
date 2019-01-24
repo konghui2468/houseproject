@@ -89,8 +89,13 @@ public class ForwardController {
     }
 
 
-    @RequestMapping("/ershoufan")//改
-    public String test(){
+    @RequestMapping("/ershoufang")//改
+    public String test(Model model){
+        Map<String, Object> map = userService.searchTHByKeyword("三", 1, 10);
+        Object list = map.get("list");
+        List<tH> list1= (List<tH>) list;
+        System.out.println(list1);
+        model.addAttribute("hl",list1);
        return "index";
     }
 

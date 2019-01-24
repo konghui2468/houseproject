@@ -28,11 +28,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="EncrypUtil2.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HousedCommons/commonsStringUtils/src/main/java/com/qianfeng/common/utils/EncrypUtil2.java">
+      <file leaf-file-name="UserService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/HouseWeb/webservice/src/main/java/com/qianfeng/house/service/UserService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="444">
-              <caret line="24" column="31" lean-forward="true" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
+            <state relative-caret-position="660">
+              <caret line="56" column="51" selection-start-line="56" selection-start-column="51" selection-end-line="56" selection-end-column="51" />
             </state>
           </provider>
         </entry>
@@ -40,17 +40,26 @@
       <file leaf-file-name="login.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HouseWeb/webController/src/main/webapp/WEB-INF/jsp/login.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
-              <caret line="385" column="115" selection-start-line="385" selection-start-column="115" selection-end-line="385" selection-end-column="115" />
+            <state relative-caret-position="1090">
+              <caret line="241" column="19" selection-start-line="194" selection-start-column="16" selection-end-line="241" selection-end-column="19" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="THMapper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HouseWeb/webmapper/src/main/java/com/qianfeng/house/mapper/THMapper.java">
+      <file leaf-file-name="UserServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/HouseWeb/webserviceImpl/src/main/java/com/qianfeng/house/serviceImpl/UserServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+            <state relative-caret-position="-774">
+              <caret line="85" column="54" selection-start-line="85" selection-start-column="54" selection-end-line="85" selection-end-column="54" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="register.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/HouseWeb/webController/src/main/webapp/WEB-INF/jsp/register.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="328">
+              <caret line="308" column="29" selection-start-line="308" selection-start-column="29" selection-end-line="308" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -58,11 +67,20 @@
       <file leaf-file-name="HouseController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/HouseWeb/webController/src/main/java/com/qianfeng/house/controller/controller/HouseController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
-              <caret line="262" column="49" lean-forward="true" selection-start-line="262" selection-start-column="49" selection-end-line="262" selection-end-column="49" />
+            <state relative-caret-position="732">
+              <caret line="282" column="5" lean-forward="true" selection-start-line="282" selection-start-column="5" selection-end-line="282" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ForwardController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/HouseWeb/webController/src/main/java/com/qianfeng/house/controller/controller/ForwardController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-9">
+              <caret line="91" column="32" selection-start-line="91" selection-start-column="32" selection-end-line="91" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -104,6 +122,8 @@
       <find>prev-page</find>
       <find>下一页</find>
       <find>登录</find>
+      <find>jpg</find>
+      <find>registerload</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -143,7 +163,6 @@
         <option value="$PROJECT_DIR$/HousedCommons/commonsStringUtils/pom.xml" />
         <option value="$PROJECT_DIR$/HousedCommons/commonsStringUtils/src/main/java/com/qianfeng/common/utils/StringUtils.java" />
         <option value="$PROJECT_DIR$/HouseWeb/webpojo/src/main/java/com/qianfeng/house/pojo/user.java" />
-        <option value="$PROJECT_DIR$/HouseWeb/webController/src/main/webapp/WEB-INF/jsp/register.jsp" />
         <option value="$PROJECT_DIR$/HousedCommons/commonscode/src/main/java/com/qianfeng/common/codeUtils/CodeController.java" />
         <option value="$PROJECT_DIR$/HouseWeb/webserviceImpl/pom.xml" />
         <option value="$PROJECT_DIR$/HouseWeb/webmapper/src/main/java/com/qianfeng/house/mapper/THMapper.java" />
@@ -153,15 +172,16 @@
         <option value="$PROJECT_DIR$/HousedCommons/pom.xml" />
         <option value="$PROJECT_DIR$/HouseWeb/webController/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/HousedCommons/commonsStringUtils/src/main/java/com/qianfeng/common/utils/EncrypUtil2.java" />
-        <option value="$PROJECT_DIR$/HouseWeb/webController/src/main/java/com/qianfeng/house/controller/controller/ForwardController.java" />
         <option value="$PROJECT_DIR$/HouseWeb/webController/src/main/webapp/WEB-INF/jsp/index.jsp" />
         <option value="$PROJECT_DIR$/HouseWeb/webController/src/main/resources/static/js/basic.js" />
-        <option value="$PROJECT_DIR$/HouseWeb/webController/src/main/webapp/WEB-INF/jsp/portal.jsp" />
         <option value="$PROJECT_DIR$/HouseWeb/webmapper/src/main/resources/mapper/UserMapper.xml" />
         <option value="$PROJECT_DIR$/HouseWeb/webmapper/src/main/java/com/qianfeng/house/mapper/UserMapper.java" />
         <option value="$PROJECT_DIR$/HouseWeb/webservice/src/main/java/com/qianfeng/house/service/UserService.java" />
         <option value="$PROJECT_DIR$/HouseWeb/webserviceImpl/src/main/java/com/qianfeng/house/serviceImpl/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/HouseWeb/webController/src/main/webapp/WEB-INF/jsp/login.jsp" />
+        <option value="$PROJECT_DIR$/HouseWeb/webController/src/main/webapp/WEB-INF/jsp/portal.jsp" />
+        <option value="$PROJECT_DIR$/HouseWeb/webController/src/main/java/com/qianfeng/house/controller/controller/ForwardController.java" />
+        <option value="$PROJECT_DIR$/HouseWeb/webController/src/main/webapp/WEB-INF/jsp/register.jsp" />
         <option value="$PROJECT_DIR$/HouseWeb/webController/src/main/java/com/qianfeng/house/controller/controller/HouseController.java" />
       </list>
     </option>
@@ -226,10 +246,10 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="339" />
-    <option name="y" value="129" />
-    <option name="width" value="1347" />
-    <option name="height" value="966" />
+    <option name="x" value="229" />
+    <option name="y" value="23" />
+    <option name="width" value="1400" />
+    <option name="height" value="820" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -237,9 +257,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
       <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -250,56 +270,6 @@
             <path>
               <item name="UsedHouseProject" type="b2602c69:ProjectViewProjectNode" />
               <item name="UsedHouseProject" type="462c0819:PsiDirectoryNode" />
-              <item name="HousedCommons" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="UsedHouseProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="UsedHouseProject" type="462c0819:PsiDirectoryNode" />
-              <item name="HousedCommons" type="462c0819:PsiDirectoryNode" />
-              <item name="commonsStringUtils" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="UsedHouseProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="UsedHouseProject" type="462c0819:PsiDirectoryNode" />
-              <item name="HousedCommons" type="462c0819:PsiDirectoryNode" />
-              <item name="commonsStringUtils" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="UsedHouseProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="UsedHouseProject" type="462c0819:PsiDirectoryNode" />
-              <item name="HousedCommons" type="462c0819:PsiDirectoryNode" />
-              <item name="commonsStringUtils" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="UsedHouseProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="UsedHouseProject" type="462c0819:PsiDirectoryNode" />
-              <item name="HousedCommons" type="462c0819:PsiDirectoryNode" />
-              <item name="commonsStringUtils" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="UsedHouseProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="UsedHouseProject" type="462c0819:PsiDirectoryNode" />
-              <item name="HousedCommons" type="462c0819:PsiDirectoryNode" />
-              <item name="commonsStringUtils" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="UsedHouseProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="UsedHouseProject" type="462c0819:PsiDirectoryNode" />
-              <item name="HousedManager" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="UsedHouseProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="UsedHouseProject" type="462c0819:PsiDirectoryNode" />
               <item name="HouseWeb" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -352,25 +322,6 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="controller" type="462c0819:PsiDirectoryNode" />
               <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="UsedHouseProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="UsedHouseProject" type="462c0819:PsiDirectoryNode" />
-              <item name="HouseWeb" type="462c0819:PsiDirectoryNode" />
-              <item name="webController" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="UsedHouseProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="UsedHouseProject" type="462c0819:PsiDirectoryNode" />
-              <item name="HouseWeb" type="462c0819:PsiDirectoryNode" />
-              <item name="webController" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="UsedHouseProject" type="b2602c69:ProjectViewProjectNode" />
@@ -402,145 +353,6 @@
               <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
               <item name="jsp" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="UsedHouseProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="UsedHouseProject" type="462c0819:PsiDirectoryNode" />
-              <item name="HouseWeb" type="462c0819:PsiDirectoryNode" />
-              <item name="webmapper" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="UsedHouseProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="UsedHouseProject" type="462c0819:PsiDirectoryNode" />
-              <item name="HouseWeb" type="462c0819:PsiDirectoryNode" />
-              <item name="webmapper" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="UsedHouseProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="UsedHouseProject" type="462c0819:PsiDirectoryNode" />
-              <item name="HouseWeb" type="462c0819:PsiDirectoryNode" />
-              <item name="webmapper" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="UsedHouseProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="UsedHouseProject" type="462c0819:PsiDirectoryNode" />
-              <item name="HouseWeb" type="462c0819:PsiDirectoryNode" />
-              <item name="webmapper" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="UsedHouseProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="UsedHouseProject" type="462c0819:PsiDirectoryNode" />
-              <item name="HouseWeb" type="462c0819:PsiDirectoryNode" />
-              <item name="webmapper" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="mapper" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="UsedHouseProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="UsedHouseProject" type="462c0819:PsiDirectoryNode" />
-              <item name="HouseWeb" type="462c0819:PsiDirectoryNode" />
-              <item name="webmapper" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="UsedHouseProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="UsedHouseProject" type="462c0819:PsiDirectoryNode" />
-              <item name="HouseWeb" type="462c0819:PsiDirectoryNode" />
-              <item name="webmapper" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="mapper" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="UsedHouseProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="UsedHouseProject" type="462c0819:PsiDirectoryNode" />
-              <item name="HouseWeb" type="462c0819:PsiDirectoryNode" />
-              <item name="webservice" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="UsedHouseProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="UsedHouseProject" type="462c0819:PsiDirectoryNode" />
-              <item name="HouseWeb" type="462c0819:PsiDirectoryNode" />
-              <item name="webservice" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="UsedHouseProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="UsedHouseProject" type="462c0819:PsiDirectoryNode" />
-              <item name="HouseWeb" type="462c0819:PsiDirectoryNode" />
-              <item name="webservice" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="UsedHouseProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="UsedHouseProject" type="462c0819:PsiDirectoryNode" />
-              <item name="HouseWeb" type="462c0819:PsiDirectoryNode" />
-              <item name="webservice" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="UsedHouseProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="UsedHouseProject" type="462c0819:PsiDirectoryNode" />
-              <item name="HouseWeb" type="462c0819:PsiDirectoryNode" />
-              <item name="webservice" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="UsedHouseProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="UsedHouseProject" type="462c0819:PsiDirectoryNode" />
-              <item name="HouseWeb" type="462c0819:PsiDirectoryNode" />
-              <item name="webserviceImpl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="UsedHouseProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="UsedHouseProject" type="462c0819:PsiDirectoryNode" />
-              <item name="HouseWeb" type="462c0819:PsiDirectoryNode" />
-              <item name="webserviceImpl" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="UsedHouseProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="UsedHouseProject" type="462c0819:PsiDirectoryNode" />
-              <item name="HouseWeb" type="462c0819:PsiDirectoryNode" />
-              <item name="webserviceImpl" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="UsedHouseProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="UsedHouseProject" type="462c0819:PsiDirectoryNode" />
-              <item name="HouseWeb" type="462c0819:PsiDirectoryNode" />
-              <item name="webserviceImpl" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="UsedHouseProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="UsedHouseProject" type="462c0819:PsiDirectoryNode" />
-              <item name="HouseWeb" type="462c0819:PsiDirectoryNode" />
-              <item name="webserviceImpl" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="serviceImpl" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -565,24 +377,24 @@
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="F:\QQ飞车\UsedHouseProject\HouseWeb\webmapper\src\main\resources\mapper" />
-      <recent name="F:\QQ飞车\UsedHouseProject\HouseWeb\webmapper\src\main\resources" />
-      <recent name="F:\QQ飞车\UsedHouseProject\HouseWeb\webmapper\src\main\java\com\qianfeng\house\mapper" />
-      <recent name="F:\QQ飞车\UsedHouseProject\HouseWeb\webController\src\main\webapp" />
-      <recent name="F:\QQ飞车\UsedHouseProject\HouseWeb\webController\src\main\resources\static" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\hjg\Desktop\UsedHouseProject\HouseWeb\webController\src\main\resources\static\picture" />
+      <recent name="C:\Users\xyz\Desktop\图片\UsedHouseProject\HouseWeb\webController\src\main\resources\static\picture" />
+      <recent name="C:\Users\xyz\Desktop\图片\UsedHouseProject\HouseWeb\webController\src\main\resources\static\js" />
+      <recent name="C:\Users\xyz\Desktop\图片\UsedHouseProject\HouseWeb\webController\src\main\resources\static\images" />
+      <recent name="C:\Users\xyz\Desktop\图片\UsedHouseProject\HouseWeb\webController\src\main\resources\static\css" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.qianfeng.common.redisUtil" />
       <recent name="com.qianfeng.house.mapper" />
       <recent name="com.qianfeng.common.utils" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\xyz\Desktop\图片\UsedHouseProject\HouseWeb\webController\src\main\resources\static\picture" />
-      <recent name="C:\Users\xyz\Desktop\图片\UsedHouseProject\HouseWeb\webController\src\main\resources\static\js" />
-      <recent name="C:\Users\xyz\Desktop\图片\UsedHouseProject\HouseWeb\webController\src\main\resources\static\images" />
-      <recent name="C:\Users\xyz\Desktop\图片\UsedHouseProject\HouseWeb\webController\src\main\resources\static\css" />
-      <recent name="C:\Users\xyz\Desktop\图片\UsedHouseProject\HouseWeb\webController\src\main\webapp\WEB-INF\jsp" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\QQ飞车\UsedHouseProject\HouseWeb\webmapper\src\main\resources\mapper" />
+      <recent name="F:\QQ飞车\UsedHouseProject\HouseWeb\webmapper\src\main\resources" />
+      <recent name="F:\QQ飞车\UsedHouseProject\HouseWeb\webmapper\src\main\java\com\qianfeng\house\mapper" />
+      <recent name="F:\QQ飞车\UsedHouseProject\HouseWeb\webController\src\main\webapp" />
+      <recent name="F:\QQ飞车\UsedHouseProject\HouseWeb\webController\src\main\resources\static" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -597,7 +409,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Remote.Debug">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
@@ -781,6 +593,8 @@
       <workItem from="1548235045677" duration="3579000" />
       <workItem from="1548239992051" duration="1539000" />
       <workItem from="1548241783094" duration="3111000" />
+      <workItem from="1548248855935" duration="3296000" />
+      <workItem from="1548291059954" duration="6277000" />
     </task>
     <servers />
   </component>
@@ -817,14 +631,15 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="149325000" />
+    <option name="totallyTimeSpent" value="158898000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
-      <window_info active="true" anchor="right" id="Maven Projects" order="4" visible="true" weight="0.30814576" />
+      <window_info anchor="right" id="Maven Projects" order="4" visible="true" weight="0.16666667" />
       <window_info anchor="bottom" id="Database Changes" order="4" show_stripe_button="false" />
       <window_info id="Capture Tool" order="4" />
       <window_info id="Designer" order="0" />
@@ -834,16 +649,15 @@
       <window_info id="UI Designer" order="2" />
       <window_info anchor="bottom" id="Debug" order="9" weight="0.128" />
       <window_info anchor="bottom" id="TODO" order="12" />
-      <window_info anchor="bottom" id="Messages" order="2" weight="0.23428571" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info id="Image Layers" order="1" />
       <window_info anchor="bottom" id="Java Enterprise" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="2" />
-      <window_info anchor="bottom" id="Run" order="8" weight="0.12685715" />
       <window_info anchor="bottom" id="Version Control" order="5" />
+      <window_info anchor="bottom" id="Run" order="8" visible="true" weight="0.117714286" />
       <window_info anchor="bottom" id="Spring" order="13" />
       <window_info anchor="bottom" id="Terminal" order="0" />
-      <window_info content_ui="combo" x="0" y="515" width="345" height="565" id="Project" order="7" side_tool="true" weight="0.26259378" />
+      <window_info active="true" content_ui="combo" x="0" y="515" width="345" height="565" id="Project" order="7" side_tool="true" visible="true" weight="0.2652733" />
       <window_info anchor="right" id="Bean Validation" order="1" weight="0.329582" />
       <window_info id="Web" order="5" side_tool="true" />
       <window_info anchor="right" id="BPMNPalette" order="0" />
@@ -852,16 +666,17 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="8" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
       <window_info id="Persistence" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="Find" order="7" weight="0.32951945" />
       <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
+      <window_info anchor="bottom" id="Messages" order="2" weight="0.23428571" />
       <window_info anchor="bottom" id="Message" order="6" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="10" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="7" weight="0.32951945" />
     </layout>
     <layout-to-restore>
       <window_info id="Persistence" order="8" side_tool="true" />
       <window_info id="Designer" order="0" />
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info active="true" anchor="bottom" id="Run" order="8" visible="true" weight="0.288" />
+      <window_info active="true" anchor="bottom" id="Run" order="8" visible="true" weight="0.15428571" />
       <window_info anchor="bottom" id="Spring" order="13" />
       <window_info id="Image Layers" order="1" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="8" type="SLIDING" weight="0.4" />
@@ -880,9 +695,9 @@
       <window_info anchor="bottom" id="Java Enterprise" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="4" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="5" />
-      <window_info anchor="right" id="Maven Projects" order="4" visible="true" weight="0.30814576" />
+      <window_info anchor="right" id="Maven Projects" order="4" visible="true" weight="0.16666667" />
       <window_info anchor="bottom" id="Find" order="7" weight="0.32951945" />
-      <window_info content_ui="combo" x="0" y="515" width="345" height="565" id="Project" order="7" side_tool="true" visible="true" weight="0.26259378" />
+      <window_info content_ui="combo" x="0" y="515" width="345" height="565" id="Project" order="7" side_tool="true" visible="true" weight="0.2658092" />
       <window_info anchor="right" id="Database" order="5" />
       <window_info anchor="bottom" id="Message" order="6" />
       <window_info id="Web" order="5" side_tool="true" />
@@ -902,13 +717,10 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="19" />
+      <option name="time" value="20" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/HouseWeb/webController/src/main/resources/static/css/tdzsty.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/HouseWeb/webController/src/main/resources/static/css/xxsty.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -934,13 +746,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
           <caret line="18" column="34" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HousedCommons/commonsredis/src/main/java/com/qianfeng/common/redisUtil/RedisConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="46" column="13" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1003,13 +808,6 @@
     <entry file="jar://D:/maven/repository/org/apache/commons/commons-lang3/3.4/commons-lang3-3.4.jar!/org/apache/commons/lang3/StringUtils.class" />
     <entry file="file://$PROJECT_DIR$/HouseWeb/webController/src/main/resources/static/picture/d-logo.png">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HouseWeb/webController/src/main/webapp/WEB-INF/jsp/register.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8450">
-          <caret line="338" column="54" selection-start-line="338" selection-start-column="54" selection-end-line="338" selection-end-column="54" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/HouseWeb/webController/src/main/resources/static/js/10000002.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -1077,9 +875,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
           <caret line="12" column="37" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1119,24 +914,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HouseWeb/webController/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="15" column="30" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HouseWeb/webController/src/main/java/com/qianfeng/house/controller/controller/ForwardController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="569">
-          <caret line="107" column="5" selection-start-line="107" selection-start-column="5" selection-end-line="107" selection-end-column="5" />
-          <folding>
-            <element signature="e#2989#2990#0" expanded="true" />
-            <element signature="e#3005#3006#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/HouseWeb/webController/src/main/webapp/WEB-INF/jsp/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="250">
@@ -1154,44 +931,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HouseWeb/webController/src/main/webapp/WEB-INF/jsp/portal.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="111" column="31" selection-start-line="111" selection-start-column="31" selection-end-line="111" selection-end-column="31" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HouseWeb/webservice/src/main/java/com/qianfeng/house/service/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="56" column="51" selection-start-line="56" selection-start-column="51" selection-end-line="56" selection-end-column="51" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HouseWeb/webserviceImpl/src/main/java/com/qianfeng/house/serviceImpl/UserServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="85" column="54" lean-forward="true" selection-start-line="85" selection-start-column="54" selection-end-line="85" selection-end-column="54" />
-          <folding>
-            <element signature="e#2578#2579#0" expanded="true" />
-            <element signature="e#2605#2606#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/HouseWeb/webmapper/src/main/java/com/qianfeng/house/mapper/UserMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="575">
           <caret line="23" column="21" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1204,22 +947,78 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/HousedCommons/commonsStringUtils/src/main/java/com/qianfeng/common/utils/EncrypUtil2.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
-          <caret line="24" column="31" lean-forward="true" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
+        <state relative-caret-position="600">
+          <caret line="24" column="31" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HousedCommons/commonsredis/src/main/java/com/qianfeng/common/redisUtil/RedisClientInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1025">
+          <caret line="41" column="17" selection-start-line="41" selection-start-column="17" selection-end-line="41" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HouseWeb/webController/src/main/webapp/WEB-INF/jsp/portal.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3098">
+          <caret line="404" column="95" selection-start-line="404" selection-start-column="92" selection-end-line="404" selection-end-column="95" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HousedCommons/commonsredis/src/main/java/com/qianfeng/common/redisUtil/RedisConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1050">
+          <caret line="46" column="13" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HouseWeb/webController/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="15" column="30" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HouseWeb/webservice/src/main/java/com/qianfeng/house/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="56" column="51" selection-start-line="56" selection-start-column="51" selection-end-line="56" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HouseWeb/webserviceImpl/src/main/java/com/qianfeng/house/serviceImpl/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-774">
+          <caret line="85" column="54" selection-start-line="85" selection-start-column="54" selection-end-line="85" selection-end-column="54" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/HouseWeb/webController/src/main/webapp/WEB-INF/jsp/login.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="385" column="115" selection-start-line="385" selection-start-column="115" selection-end-line="385" selection-end-column="115" />
+        <state relative-caret-position="1090">
+          <caret line="241" column="19" selection-start-line="194" selection-start-column="16" selection-end-line="241" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HouseWeb/webController/src/main/webapp/WEB-INF/jsp/register.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="308" column="29" selection-start-line="308" selection-start-column="29" selection-end-line="308" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HouseWeb/webController/src/main/java/com/qianfeng/house/controller/controller/ForwardController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-9">
+          <caret line="91" column="32" selection-start-line="91" selection-start-column="32" selection-end-line="91" selection-end-column="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/HouseWeb/webController/src/main/java/com/qianfeng/house/controller/controller/HouseController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="262" column="49" lean-forward="true" selection-start-line="262" selection-start-column="49" selection-end-line="262" selection-end-column="49" />
+        <state relative-caret-position="732">
+          <caret line="282" column="5" lean-forward="true" selection-start-line="282" selection-start-column="5" selection-end-line="282" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
