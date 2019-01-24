@@ -275,11 +275,12 @@ public class HouseController {
                 session.setAttribute("user",user);
                 return "index";
             }
+            else {
+                return "login";
+            }
         }
-        else {
-            return "login";
-        }
-        return null;
+
+        return "login";
     }
 
 

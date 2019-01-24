@@ -361,12 +361,12 @@
     <div class="head-main mar">
 
 
-        <a href=https://hz.5i5j.com>
+      <%--  <a href=https://hz.5i5j.com>
 
 
 
 
-            <img src="/static/picture/d-logo.png"></a>
+            <img src="/static/picture/d-logo.png"></a>--%>
 
     </div>
 </div>
